@@ -1,0 +1,11 @@
+{
+  "name": "hot-pie",
+  "version": "0.0.1",
+  "dependencies": {
+    "body-parser": "^1.10.1",
+    "express": "^4.11.0",
+    "jpromise": "^1.0.8",
+    "method-override": "^2.3.1",
+    "morgan": "^1.5.1"
+  }
+}
