@@ -1,0 +1,44 @@
+{
+  "sunday": [{
+    "start": "00:00",
+    "stop": "24:00",
+    "label": "default",
+    "temp": "72"
+  }],
+  "monday": [{
+    "start": "00:00",
+    "stop": "24:00",
+    "label": "default",
+    "temp": "72"
+  }],
+  "tuesday": [{
+    "start": "00:00",
+    "stop": "24:00",
+    "label": "default",
+    "temp": "72"
+  }],
+  "wednessday": [{
+    "start": "00:00",
+    "stop": "24:00",
+    "label": "default",
+    "temp": "72"
+  }],
+  "thursday": [{
+    "start": "00:00",
+    "stop": "24:00",
+    "label": "default",
+    "temp": "72"
+  }],
+  "friday": [{
+    "start": "00:00",
+    "stop": "24:00",
+    "label": "default",
+    "temp": "72"
+  }],
+  "saturday": [{
+    "start": "00:00",
+    "stop": "24:00",
+    "label": "default",
+    "temp": "72"
+  }]
+}

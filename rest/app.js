@@ -2,10 +2,12 @@ var express = require('express'),
   bodyParser = require('body-parser'),
   morgan = require('morgan'),
   methodOverride = require('method-override'),
-  routes = require('./routes.js');
+  routes = require('./routes.js'),
+  jobRunner = require('./job-runner.js');
+
+
 
 var server = express();
-
 
 var allowCrossDomain = function(req, res, next) {
   res.header('Access-Control-Allow-Origin', 'http://localhost:9000');
@@ -22,6 +24,8 @@ server.use(allowCrossDomain);
 
 var context = {};
 context.temp = {};
+
+jobRunner(context);
 
 routes(server, context);
 
