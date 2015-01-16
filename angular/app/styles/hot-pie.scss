@@ -1,4 +1,5 @@
 .thermostat-container {
+  margin-top: calc(50% - 237px);
   .thermostat {
     background: #ffffff;
     border: 1px solid #979797;
@@ -8,6 +9,7 @@
     margin: auto;
     display: flex;
     flex-direction: column;
+    position: relative;
     .thermostat-rows {
       display: flex;
       flex-direction: row;
@@ -16,6 +18,39 @@
       .thermostat-quarters {
         flex-grow: 1;
         height: 100%;
+        font-size: 36px;
+        cursor: pointer;
+        -webkit-user-select: none; /* Chrome/Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+ */
+        .tl {
+          position: relative;
+          top: 20px;
+          left: 20px;
+        }
+        .tr {
+          position: relative;
+          top: 20px;
+          left: 185px;;
+        }
+        .bl {
+          position: relative;
+          top: 180px;
+          left: 20px;
+        }
+        .br {
+          position: relative;
+          top: 180px;
+          left: 185px;
+        }
+      }
+      .thermostat-quarters:hover {
+        background-color: #EEEEEE;
+       }
+      .thermostat-quarters:active {
+        background: #FFFFFF;
+        border: 1px solid #979797;
+        box-shadow: inset 0px 0px 3px 1px rgba(0,0,0,0.50);
       }
     }
     .thermostat-dial {
@@ -25,9 +60,30 @@
       height: 477px;
       width: 477px;
       position: absolute;
-      top: 20px;
-      right: 285px;
+      top: 0;
       border-radius: 50%;
+      margin: auto;
+      .current-temp {
+        position: absolute;
+        font-size: 55px;
+        font-weight: 100;
+        top: 65px;
+        left: 90px;
+      }
+      .outside-temp {
+        position: absolute;
+        font-size: 55px;
+        font-weight: 100;
+        top: 330px;
+        left: 90px;
+      }
+      .set-temp {
+        font-size: 110px;
+        position: absolute;
+        font-weight: 100;
+        top: 155px;
+        left: 135px;
+      }
     }
   }
 }

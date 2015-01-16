@@ -1,11 +1,25 @@
-<div class="thermostat-container">
+<div class="thermostat-container"  ng-controller="ThermostatCtrl">
   <div class="thermostat">
     <div class="thermostat-rows">
-      <div class="thermostat-quarters"></div><div class="thermostat-quarters"></div>
+      <div class="thermostat-quarters" style="border-top-left-radius: 40px;">
+        <div class="tl glyphicon glyphicon-home"></div>
+      </div>
+      <div class="thermostat-quarters" style="border-top-right-radius: 40px;">
+        <div class="tr glyphicon glyphicon-plus"></div>
+      </div>
     </div>
     <div class="thermostat-rows">
-      <div class="thermostat-quarters"></div><div class="thermostat-quarters"></div>
+      <div class="thermostat-quarters" style="border-bottom-left-radius: 40px;" ui-sref="settings">
+        <div class="bl glyphicon glyphicon-cog"></div>
+      </div>
+      <div class="thermostat-quarters" style="border-bottom-right-radius: 40px;">
+        <div class="br glyphicon glyphicon-minus"></div>
+      </div>
     </div>
-    <div class="thermostat-dial"></div>
+    <div class="thermostat-dial">
+      <div class="current-temp">85 ˚F</div>
+      <div class="outside-temp">68 ˚F</div>
+      <div class="set-temp">92 ˚F</div>
+    </div>
   </div>
 </div>

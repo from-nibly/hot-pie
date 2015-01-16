@@ -29,7 +29,7 @@ angular
                 url: "/thermostat",
                 templateUrl: "/views/thermostat.html"
             })
-            .state('thermostat.settings', {
+            .state('settings', {
                 url: "/settings",
                 templateUrl: "/views/settings.html"
             })
