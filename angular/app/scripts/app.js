@@ -15,21 +15,22 @@ angular
     'ngCookies',
     'ngMessages',
     'ngResource',
-    'ngRoute',
+    'ui.router',
     'ngSanitize',
     'ngTouch'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+  .config(function ($stateProvider, $urlRouterProvider) {
+    // For any unmatched url, redirect to /state1
+    $urlRouterProvider.otherwise("/thermostat");
+    //
+    // Now set up the states
+    $stateProvider
+      .state('thermostat', {
+        url: "/thermostat",
+        templateUrl: "/views/thermostat.html"
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
+      .state('thermostat.settings', {
+        url: "/settings",
+        templateUrl: "/views/settings.html"
       });
   });
