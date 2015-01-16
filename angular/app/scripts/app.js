@@ -21,25 +21,16 @@ angular
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
     // For any unmatched url, redirect to /state1
-    $urlRouterProvider.otherwise("/app/thermostat");
+    $urlRouterProvider.otherwise("/thermostat");
     //
     // Now set up the states
     $stateProvider
-      .state('app', {
-        abstract: true,
-        url: "/app",
-        templateUrl: "/app/index.html"
-      })
-      .state('app.thermostat', {
+      .state('thermostat', {
         url: "/thermostat",
-        templateUrl: "/app/views/thermostat.html"
+        templateUrl: "/views/thermostat.html"
       })
-      .state('state2', {
-        url: "/state2",
-        templateUrl: "partials/state2.html"
-      })
-      .state('state2.list', {
-        url: "/list",
-        templateUrl: "partials/state2.list.html"
+      .state('thermostat.settings', {
+        url: "/settings",
+        templateUrl: "/views/settings.html"
       });
   });
