@@ -10,8 +10,10 @@
     <!-- bower:css -->
     <!-- endbower -->
     <!-- endbuild -->
+      <link type="text/css" rel="stylesheet" href="styles/calendar_white.css" />
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+
     <!-- endbuild -->
   </head>
   <body ng-app="hotPieApp">
@@ -70,14 +72,17 @@
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <!-- endbower -->
+    <script src="scripts/daypilot-all.min.js" type="text/javascript"></script>
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/services/tempoverrideservice.js"></script>
-        <script src="scripts/controllers/schedule.js"></script>
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/controllers/schedule.js"></script>
+    <script src="scripts/services/tempoverrideservice.js"></script>
+    <script src="scripts/services/scheduleservice.js"></script>
+    <script src="scripts/controllers/thermostat.js"></script>
         <!-- endbuild -->
 </body>
 </html>
