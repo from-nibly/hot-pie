@@ -1,4 +1,7 @@
 <div class="thermostat-container"  ng-controller="ThermostatCtrl">
+  <header>
+    <div class="hot-pi-logo"></div>
+  </header>
   <div class="thermostat">
     <div class="thermostat-rows">
       <div class="thermostat-quarters clickable" style="border-top-left-radius: 40px;">
@@ -18,8 +21,8 @@
     </div>
     <div class="thermostat-dial">
       <div class="current-temp">{{currentTemp}} ˚F <span class="iconic iconic-md" data-glyph="thermometer" title="thermometer" aria-hidden="true"></span></div>
-      <div class="outside-temp">40 ˚F <span class="iconic iconic-md" data-glyph="sun" title="sun" aria-hidden="true"></span></div>
-      <div class="set-temp">{{temp}} ˚F <span class="iconic iconic-md" data-glyph="screenshot" title="screenshot" aria-hidden="true"></span></div>
+      <div class="outside-temp">42 ˚F <span class="iconic iconic-md" data-glyph="sun" title="sun" aria-hidden="true"></span></div>
+      <div class="set-temp">{{temp ? temp : ''}} ˚F <span class="iconic iconic-md" data-glyph="screenshot" title="screenshot" aria-hidden="true"></span></div>
       <div class="indicator">
         <div class="indicator-circle" ng-repeat="dot in indicatorDots" style="{{ dot.style }}"></div>
       </div>
