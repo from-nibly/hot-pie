@@ -101,7 +101,6 @@ angular.module('hotPieApp')
           dfd.reject(obj);
         }
       });
-
       return dfd.promise;
     };
   });

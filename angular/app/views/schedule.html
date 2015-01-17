@@ -1,5 +1,9 @@
 <div ng-controller="ScheduleCtrl">
-{{dateTime | date:'EEE HH:mm:ss' }}
-<h1>In schedule</h1>
+
+<div class="flex">
+    <h1>set schedule</h1>
+    <h2>{{dateTime | date:'EEE HH:mm:ss' }}</h2>
+    <div class="glyphicon glyphicon-remove clickable" ui-sref="thermostat"></div>
+</div>
         <div id="dp"></div>
 </div>

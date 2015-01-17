@@ -18,7 +18,6 @@ angular.module('hotPieApp')
     };
 
     this.setCurrentTemp = function(temp) {
-
       return $http({
         method: "POST",
         url: "http://localhost:3000/temp/override/" + temp
