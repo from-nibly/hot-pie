@@ -56,7 +56,7 @@
     .thermostat-dial {
       background: #FFFFFF;
       border: 1px solid #979797;
-      box-shadow: 10px 20px 4px 0px rgba(0, 0, 0, 0.5);
+//      box-shadow: 5px 10px 4px 0px rgba(0, 0, 0, 0.5);
       height: 477px;
       width: 477px;
       position: absolute;
@@ -83,6 +83,16 @@
         font-weight: 100;
         top: 155px;
         left: 135px;
+      }
+      .indicator {
+        position: relative;
+        .indicator-circle {
+          position: absolute;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          border: 1px solid #979797;
+        }
       }
     }
   }
