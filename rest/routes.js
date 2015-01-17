@@ -67,7 +67,7 @@ module.exports = function(server, context) {
     });
   });
 
-  var days = ['sunday', 'monday', 'tuesday', 'wednessday', 'thursday', 'friday', 'saturday'];
+  var days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
 
   server.post('/schedule/:name', function(req, resp, next) {
 

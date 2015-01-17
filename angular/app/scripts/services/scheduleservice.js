@@ -48,7 +48,7 @@ angular.module('hotPieApp')
             }).then(function() {
                 console.log('we sent the data to the rest service');
             });
-        }
+        };
 
         this.getMungedSchedule = function(name) {
             var dfd = $q.defer();
