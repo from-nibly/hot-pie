@@ -49,7 +49,7 @@ angular.module('hotPieApp')
 
             var dayNumber = args.start.d.getDay();
 
-            var dayOfWeek = ["sunday", "monday", "tuesday", "wednessday", "thursday", "friday", "saturday"];
+            var dayOfWeek = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
             console.log(dayOfWeek[dayNumber]);
 
             var startHour = args.start.d.getHours();
