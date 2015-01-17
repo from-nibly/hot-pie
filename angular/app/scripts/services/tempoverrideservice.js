@@ -8,14 +8,14 @@
  * Service in the hotPieApp.
  */
 angular.module('hotPieApp')
-  .service('tempOverrideService', function($http, $timeout) {
+  .service('tempOverrideService', function($http, $timeout, config) {
 
     var update;
-
+    var host = config.getHost();
     this.getTemp = function() {
       $http({
         method: "GET",
-        url: "localhost:3000/temp/override/"
+        url: host + ":3000/temp/override/"
       }).then(function(data) {
         console.log(data);
       }, function(err) {
@@ -30,7 +30,7 @@ angular.module('hotPieApp')
       update = $timeout(function() {
         $http({
           method: "POST",
-          url: "localhost:3000/temp/override/" + value
+          url: host + ":3000/temp/override/" + value
         }).then(function(data) {
           console.log(data);
         }, function(err) {

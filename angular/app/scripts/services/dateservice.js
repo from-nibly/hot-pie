@@ -8,12 +8,13 @@
  * Service in the hotPieApp.
  */
 angular.module('hotPieApp')
-  .service('dateService', function($q, $http) {
+  .service('dateService', function($q, $http, config) {
     this.getDate = function() {
       var dfd = $q.defer();
+      var host = config.getHost();
 
       $http({
-        url: 'http://localhost:3000/date',
+        url: 'http://' + host + ':3000/date',
         method: "GET"
       }).success(function(resp, status, headers, config) {
         if (status < 300) {

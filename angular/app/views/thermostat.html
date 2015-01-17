@@ -1,15 +1,15 @@
 <div class="thermostat-container"  ng-controller="ThermostatCtrl">
   <div class="thermostat">
     <div class="thermostat-rows">
-      <div class="thermostat-quarters" style="border-top-left-radius: 40px;">
+      <div class="thermostat-quarters clickable" style="border-top-left-radius: 40px;">
         <div class="tl glyphicon glyphicon-home"></div>
       </div>
-      <div class="thermostat-quarters" style="border-top-right-radius: 40px;" ng-click="changeTemp(1)">
+      <div class="thermostat-quarters clickable" style="border-top-right-radius: 40px;" ng-click="changeTemp(1)">
         <div class="tr glyphicon glyphicon-plus"></div>
       </div>
     </div>
     <div class="thermostat-rows">
-      <div class="thermostat-quarters" style="border-bottom-left-radius: 40px;" ui-sref="schedule">
+      <div class="thermostat-quarters clickable" style="border-bottom-left-radius: 40px;" ui-sref="schedule">
         <div class="bl glyphicon glyphicon-cog"></div>
       </div>
       <div class="thermostat-quarters clickable" style="border-bottom-right-radius: 40px;" ng-click="changeTemp(-1)">
