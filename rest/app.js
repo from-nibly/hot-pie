@@ -24,6 +24,7 @@ server.use(allowCrossDomain);
 
 var context = {};
 context.temp = {};
+context.temp.current = 70;
 context.fake = true;
 
 jobRunner(context);

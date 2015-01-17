@@ -67,7 +67,7 @@ module.exports = function(server, context) {
     });
   });
 
-  var days = ['sunday', 'monday', 'tuesday', 'wednessday', 'thursday', 'friday', 'saturday'];
+  var days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
 
   server.post('/schedule/:name', function(req, resp, next) {
 
@@ -90,6 +90,8 @@ module.exports = function(server, context) {
 
   server.post('/schedules/:name', function(req, resp, next) {
 
+    console.log('---------------', req.params.name, req.body);
+
     var schedule = req.body;
     var name = req.params.name;
 
@@ -109,6 +111,7 @@ module.exports = function(server, context) {
           status: 'OK'
         });
       } else {
+        context.schedule = schedule;
         resp.status(200).jsonp({
           status: 'OK'
         });
@@ -120,6 +123,10 @@ module.exports = function(server, context) {
   server.get('/schedules/:name', function(req, resp, next) {
 
     var name = req.params.name;
+
+    fs.readFile('./schedules/default.json', function(err, data) {
+      context.schedule = JSON.parse(data);
+    })
 
     resp.status(200).jsonp(context.schedule);
 

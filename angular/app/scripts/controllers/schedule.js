@@ -47,18 +47,25 @@ angular.module('hotPieApp')
 
       });
 
-      var dayNumber = args.start.d.getDay();
+      var startStamp = args.start.value + "-07:00";
+      var endStamp = args.end.value + "-07:00";
+
+      var dayNumber = new Date(startStamp).getDay();
 
       var dayOfWeek = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
       console.log(dayOfWeek[dayNumber]);
 
-      var startHour = args.start.d.getHours();
-      var startMinute = args.start.d.getMinutes();
+      var startHour = new Date(startStamp).getHours();
+      startHour = ("" + startHour).length > 1 ? startHour : "0" + startHour;
+      var startMinute = new Date(startStamp).getMinutes();
+      startMinute = ("" + startMinute).length > 1 ? startMinute : "0" + startMinute;
 
       var startTime = startHour + ":" + startMinute;
 
-      var endHour = args.start.d.getHours();
-      var endMinute = args.start.d.getMinutes();
+      var endHour = new Date(endStamp).getHours();
+      endHour = ("" + endHour).length > 1 ? endHour : "0" + endHour;
+      var endMinute = new Date(endStamp).getMinutes();
+      endMinute = ("" + endMinute).length > 1 ? endMinute : "0" + endMinute;
 
       var endTime = endHour + ":" + endMinute;
 
