@@ -15,10 +15,10 @@ angular.module('hotPieApp')
         this.getSchedule = function(name) {
             var dfd = $q.defer();
             console.log('getting the schedule');
-            console.log("http://137.190.207.214:3000/schedules/" + name);
+            console.log("http://137.190.206.60:3000/schedules/" + name);
             $http({
                 method : "GET",
-                url : "http://137.190.207.214:3000/schedules/" + name
+                url : "http://137.190.206.60:3000/schedules/" + name
             }).then(function(body, resp, err) {
                 console.log('got response for', name);
                 if(err) {
@@ -43,7 +43,7 @@ angular.module('hotPieApp')
             cached[day].overrides.push(obj);
             $http({
                 method: 'POST',
-                url : 'http://137.190.207.214:3000/schedules/default',
+                url : 'http://137.190.206.60:3000/schedules/default',
                 body : JSON.stringify(cached)
             }).then(function() {
                 console.log('we sent the data to the rest service');

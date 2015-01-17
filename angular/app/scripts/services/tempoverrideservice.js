@@ -12,7 +12,7 @@ angular.module('hotPieApp')
        this.getTemp = function() {
            $http({
                method : "GET",
-               url : "http://137.190.207.78:3000/schedules/default"
+               url : "http://137.190.206.60:3000/schedules/default"
            }, function(err, resp, body) {
                console.log(err, resp, body);
            });

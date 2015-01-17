@@ -13,7 +13,7 @@ angular.module('hotPieApp')
         this.getCurrentTemp = function (name) {
             return $http({
                 method: "GET",
-                url: "http://137.190.207.214:3000/temp/current"
+                url: "http://137.190.206.60:3000/temp/current"
             });
         };
 
@@ -21,7 +21,7 @@ angular.module('hotPieApp')
 
             return $http({
                 method: "POST",
-                url: "http://137.190.207.214:3000/temp/override/" + temp
+                url: "http://137.190.206.60:3000/temp/override/" + temp
             }).then(function (data) {
                 console.log(data);
             })
