@@ -78,7 +78,6 @@ angular.module('hotPieApp').controller('ThermostatCtrl', function ($scope, therm
                 }
                 else {
                     console.log(body.data.newValue);
-                    debugger;
                     $scope.currentTemp = body.data.newValue;
                 }
             });
