@@ -143,7 +143,7 @@ angular.module('hotPieApp').controller('ThermostatCtrl', function($scope, thermo
           console.log(body);
         }
       })
-    }, 200);
+    }, 3000);
   };
 
 });
