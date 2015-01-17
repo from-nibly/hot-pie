@@ -9,11 +9,11 @@
  */
 angular.module('hotPieApp')
     .service('thermostatService', function ($http) {
-
+        var server = "http://137.190.207.214:3000";
         this.getCurrentTemp = function (name) {
             return $http({
                 method: "GET",
-                url: "http://137.190.206.60:3000/temp/current"
+                url: server + "/temp/current"
             });
         };
 
@@ -21,7 +21,8 @@ angular.module('hotPieApp')
 
             return $http({
                 method: "POST",
-                url: "http://137.190.206.60:3000/temp/override/" + temp
+                url: server + "/temp/override/" + temp
+
             }).then(function (data) {
                 console.log(data);
             })
