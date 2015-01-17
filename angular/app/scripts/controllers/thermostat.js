@@ -7,7 +7,7 @@
  * # ThermostatCtrl
  * Controller of the hotPieApp
  */
-angular.module('hotPieApp').controller('ThermostatCtrl', function ($scope, thermostatService, $interval) {
+angular.module('hotPieApp').controller('ThermostatCtrl', function ($scope, thermostatService, $interval, $timeout) {
 
   $scope.indicatorDots = [
     {
@@ -94,7 +94,6 @@ angular.module('hotPieApp').controller('ThermostatCtrl', function ($scope, therm
     console.log('in update indicator - temp: ', temp);
     var dots = $scope.indicatorDots;
     var highEnd = 0;
-    var lowEnd = 1;
     for (var i = 0; i < dots.length; i++) {
       if (dots[i].range[highEnd] <= temp) {
         dots[i].on = true;
@@ -111,7 +110,6 @@ angular.module('hotPieApp').controller('ThermostatCtrl', function ($scope, therm
   $interval(function () {
 
     thermostatService.getCurrentTemp().then(function (body, resp, err) {
-      console.log('got response for', name);
       if (err) {
         console.log('rejecting', err);
       }
@@ -122,4 +120,25 @@ angular.module('hotPieApp').controller('ThermostatCtrl', function ($scope, therm
       }
     });
   }, 2000);
+
+
+
+    $scope.temp = 72;
+    $scope.changeTemp = function(changeAmount) {
+        $scope.temp = $scope.temp  + changeAmount;
+    };
+
+//    $timeout(function() {
+//        thermostatService.setCurrentTemp().then(function(body, resp, err) {
+//            console.log("setting new temp", body);
+//            if (err) {
+//                console.log("rejecting", err);
+//            }
+//            else {
+//                console.log(body);
+//            }
+//        })
+//    }, 200);
+
+
 });
