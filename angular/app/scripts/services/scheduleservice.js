@@ -8,17 +8,18 @@
  * Service in the hotPieApp.
  */
 angular.module('hotPieApp')
-  .service('scheduleService', function($http, $q) {
+  .service('scheduleService', function($http, $q, config) {
 
     var cached = {};
+    var host = config.getHost();
 
     this.getSchedule = function(name) {
       var dfd = $q.defer();
       console.log('getting the schedule');
-      console.log("http://localhost:3000/schedules/" + name);
+      console.log("http://" + host + ":3000/schedules/" + name);
       $http({
         method: "GET",
-        url: "http://localhost:3000/schedules/" + name
+        url: "http://" + host + ":3000/schedules/" + name
       }).then(function(body, resp, err) {
         console.log('got response for', name, body.data);
         if (err) {
@@ -44,7 +45,7 @@ angular.module('hotPieApp')
       cached[day].overrides.push(obj);
       $http({
         method: 'POST',
-        url: 'http://localhost:3000/schedules/default',
+        url: "http://" + host + ":3000/schedules/default",
         headers: {
           'Content-Type': 'application/json'
         },
