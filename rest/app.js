@@ -15,7 +15,7 @@ var allowCrossDomain = function(req, res, next) {
   res.header('Access-Control-Allow-Headers', 'Content-Type');
 
   next();
-}
+};
 
 server.use(morgan());
 server.use(bodyParser());

@@ -4,3 +4,7 @@ dist
 .sass-cache
 bower_components
 .idea
+
+angular/app/styles/*.css.map
+angular/app/styles/*.css
+npm-debug.log
