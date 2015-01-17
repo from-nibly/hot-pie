@@ -79,6 +79,10 @@
         font-weight: 100;
         top: 65px;
         left: 90px;
+        .iconic {
+          position: relative;
+          bottom: 5px;
+        }
       }
       .outside-temp {
         position: absolute;
@@ -97,6 +101,11 @@
         font-weight: 100;
         top: 155px;
         left: 135px;
+        .iconic {
+          position: relative;
+          bottom: 26px;
+          right: 15px;
+        }
       }
       .indicator {
         position: relative;
