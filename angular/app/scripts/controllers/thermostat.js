@@ -102,6 +102,8 @@ angular.module('hotPieApp').controller('ThermostatCtrl', function ($scope, therm
             }
         }
     };
+
+    var followChange = false;
     var getCurrentTemp = function () {
 
         thermostatService.getCurrentTemp().then(function (body, resp, err) {
@@ -111,7 +113,9 @@ angular.module('hotPieApp').controller('ThermostatCtrl', function ($scope, therm
             else {
                 console.log('accepted!');
                 $scope.currentTemp = body.data.newValue;
-                updateIndicator(body.data.newValue);
+                if (!followChange) {
+                    updateIndicator(body.data.newValue);
+                }
             }
         });
     };
@@ -133,6 +137,8 @@ angular.module('hotPieApp').controller('ThermostatCtrl', function ($scope, therm
 
     $scope.changeTemp = function (changeAmount) {
         $scope.temp = $scope.temp + changeAmount;
+        followChange = "hotPi";
+        updateIndicator($scope.temp);
         setTemp();
     };
 
@@ -142,6 +148,7 @@ angular.module('hotPieApp').controller('ThermostatCtrl', function ($scope, therm
             $timeout.cancel(timeout);
         }
         timeout = $timeout(function () {
+            followChange = false;
             thermostatService.setCurrentTemp($scope.temp).then(function (body, resp, err) {
                 console.log("setting new temp", body);
                 if (err) {
@@ -151,7 +158,7 @@ angular.module('hotPieApp').controller('ThermostatCtrl', function ($scope, therm
                     console.log(body);
                 }
             })
-        }, 200);
-    }
+        }, 4000);
+    };
 
 });
