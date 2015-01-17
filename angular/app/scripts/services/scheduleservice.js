@@ -35,7 +35,6 @@ angular.module('hotPieApp')
       return dfd.promise;
     };
 
-
     //this is where the new code is.
     //let me know if this works.
     this.addBlock = function(day, obj) {

@@ -4,7 +4,13 @@
     "otherwise": 72
   },
   "monday": {
-    "overrides": [],
+    "overrides": [
+      {
+        "start": "11:00",
+        "stop": "13:00",
+        "temp": "72"
+      }
+    ],
     "otherwise": 72
   },
   "tuesday": {
