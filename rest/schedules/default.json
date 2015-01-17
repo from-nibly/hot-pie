@@ -1,96 +1,30 @@
 {
   "sunday": {
-    "overrides": [
-      {
-        "start": "05:00",
-        "stop": "05:00",
-        "temp": "72"
-      },
-      {
-        "start": "13:00",
-        "stop": "15:00",
-        "temp": "72"
-      }
-    ],
+    "overrides": [],
     "otherwise": 72
   },
   "monday": {
-    "overrides": [
-      {
-        "start": "04:00",
-        "stop": "04:00",
-        "temp": "72"
-      },
-      {
-        "start": "06:00",
-        "stop": "09:30",
-        "temp": "72"
-      },
-      {
-        "start": "06:00",
-        "stop": "09:00",
-        "temp": "72"
-      }
-    ],
+    "overrides": [],
     "otherwise": 72
   },
   "tuesday": {
-    "overrides": [
-      {
-        "start": "11:30",
-        "stop": "13:30",
-        "temp": "72"
-      },
-      {
-        "start": "03:30",
-        "stop": "10:00",
-        "temp": "72"
-      }
-    ],
+    "overrides": [],
     "otherwise": 72
   },
-  "wednessday": {
+  "wednesday": {
     "overrides": [],
     "otherwise": 72
   },
   "thursday": {
-    "overrides": [
-      {
-        "start": "12:30",
-        "stop": "15:00",
-        "temp": "72"
-      }
-    ],
+    "overrides": [],
     "otherwise": 72
   },
   "friday": {
-    "overrides": [
-      {
-        "start": "05:30",
-        "stop": "08:00",
-        "temp": "72"
-      }
-    ],
+    "overrides": [],
     "otherwise": 72
   },
   "saturday": {
-    "overrides": [
-      {
-        "start": "11:00",
-        "stop": "14:00",
-        "temp": "72"
-      }
-    ],
-    "otherwise": 72
-  },
-  "wednesday": {
-    "overrides": [
-      {
-        "start": "03:00",
-        "stop": "06:00",
-        "temp": "72"
-      }
-    ],
+    "overrides": [],
     "otherwise": 72
   }
 }
