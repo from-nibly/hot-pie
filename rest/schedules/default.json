@@ -1,44 +1,30 @@
- {
-   "sunday": [{
-     "start": "00:00",
-     "stop": "24:00",
-     "temp": "72",
-     "label": "default"
-   }],
-   "monday": [{
-     "start": "00:00",
-     "stop": "24:00",
-     "temp": "72",
-     "label": "default"
-   }],
-   "tuesday": [{
-     "start": "00:00",
-     "stop": "24:00",
-     "temp": "72",
-     "label": "default"
-   }],
-   "wednessday": [{
-     "start": "00:00",
-     "stop": "24:00",
-     "temp": "72",
-     "label": "default"
-   }],
-   "thursday": [{
-     "start": "00:00",
-     "stop": "24:00",
-     "temp": "72",
-     "label": "default"
-   }],
-   "friday": [{
-     "start": "00:00",
-     "stop": "24:00",
-     "temp": "72",
-     "label": "default"
-   }],
-   "saturday": [{
-     "start": "00:00",
-     "stop": "24:00",
-     "temp": "72",
-     "label": "default"
-   }]
- }
+{
+  "sunday": {
+    "overrides": [],
+    "otherwise": 72
+  },
+  "monday": {
+    "overrides": [],
+    "otherwise": 72
+  },
+  "tuesday": {
+    "overrides": [],
+    "otherwise": 72
+  },
+  "wednessday": {
+    "overrides": [],
+    "otherwise": 72
+  },
+  "thursday": {
+    "overrides": [],
+    "otherwise": 72
+  },
+  "friday": {
+    "overrides": [],
+    "otherwise": 72
+  },
+  "saturday": {
+    "overrides": [],
+    "otherwise": 72
+  }
+}
