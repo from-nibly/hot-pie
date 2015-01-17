@@ -5,10 +5,12 @@ module.exports = function(context) {
   var child = spawn('node', ['./input/printTemp.js']);
 
   child.stdout.on('data', function(data) {
+    var temp = parseInt(data.toString('utf8')) * 1.8 + 32;
     console.log('stdout:', data.toString('utf8'));
+    console.log('---------------current temp', temp);
     if (!context.fake) {
       console.log('setting temperature', context.fake);
-      context.temp.current = parseInt(data.toString('utf8'));
+      context.temp.current = temp;
     }
   });
 

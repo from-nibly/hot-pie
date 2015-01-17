@@ -60,8 +60,8 @@ module.exports = function(server, context) {
 
   });
 
-  server.post('/fake', function(req, resp, next) {
-    context.fake = !context.fake;
+  server.post('/fake/:value', function(req, resp, next) {
+    context.fake = req.params.value === 'true';
     resp.status(200).jsonp({
       status: 'OK'
     });

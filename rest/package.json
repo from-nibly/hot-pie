@@ -3,10 +3,13 @@
   "version": "0.0.1",
   "dependencies": {
     "body-parser": "^1.10.1",
+    "cli": "^0.6.5",
     "express": "^4.11.0",
     "jpromise": "^1.0.8",
     "method-override": "^2.3.1",
     "moment": "^2.9.0",
-    "morgan": "^1.5.1"
+    "morgan": "^1.5.1",
+    "request": "^2.51.0",
+    "sync-prompt": "^0.4.1"
   }
 }
