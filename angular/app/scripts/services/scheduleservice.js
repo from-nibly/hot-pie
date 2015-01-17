@@ -63,7 +63,7 @@ angular.module('hotPieApp')
                     try {
                         //munge code here
                         var rtn = [];
-                        var days = ['sunday', 'monday', 'tuesday', 'wednessday', 'thursday', 'friday', 'saturday'];
+                        var days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
                         for (var day in obj) {
                             var date = days.indexOf(day);
                             for (var b in obj[day].overrides) {
