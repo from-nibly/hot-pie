@@ -10,7 +10,7 @@
 angular.module('hotPieApp')
   .service('thermostatService', function($http) {
 
-    this.getCurrentTemp = function(name) {
+    this.getCurrentTemp = function() {
       return $http({
         method: "GET",
         url: "http://localhost:3000/temp/current"
@@ -24,5 +24,12 @@ angular.module('hotPieApp')
       }).then(function(data) {
         console.log(data);
       })
-    }
+    };
+
+        this.getOverrideTemp = function() {
+            return $http({
+                method:"GET",
+                url: "http://localhost:3000/temp/override"
+            });
+        }
   });
