@@ -3,7 +3,8 @@ var express = require('express'),
   morgan = require('morgan'),
   methodOverride = require('method-override'),
   routes = require('./routes.js'),
-  jobRunner = require('./job-runner.js');
+  jobRunner = require('./job-runner.js'),
+  fs = require('fs');
 
 
 
@@ -26,6 +27,10 @@ var context = {};
 context.temp = {};
 context.temp.current = 70;
 context.fake = true;
+context.mode = "schedule"
+fs.readFile('./schedules/default.json', function(err, data) {
+  context.schedule = JSON.parse(data);
+})
 
 jobRunner(context);
 

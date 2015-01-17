@@ -8,22 +8,22 @@
  * Service in the hotPieApp.
  */
 angular.module('hotPieApp')
-    .service('thermostatService', function ($http) {
+  .service('thermostatService', function($http) {
 
-        this.getCurrentTemp = function (name) {
-            return $http({
-                method: "GET",
-                url: "http://137.190.207.214:3000/temp/current"
-            });
-        };
+    this.getCurrentTemp = function(name) {
+      return $http({
+        method: "GET",
+        url: "http://localhost:3000/temp/current"
+      });
+    };
 
-        this.setCurrentTemp = function (temp) {
+    this.setCurrentTemp = function(temp) {
 
-            return $http({
-                method: "POST",
-                url: "http://137.190.207.214:3000/temp/override/" + temp
-            }).then(function (data) {
-                console.log(data);
-            })
-        }
-    });
+      return $http({
+        method: "POST",
+        url: "http://localhost:3000/temp/override/" + temp
+      }).then(function(data) {
+        console.log(data);
+      })
+    }
+  });

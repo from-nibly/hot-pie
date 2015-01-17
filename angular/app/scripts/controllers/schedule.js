@@ -8,9 +8,11 @@
  * Controller of the hotPieApp
  */
 angular.module('hotPieApp')
-  .controller('ScheduleCtrl', function($scope, $http, scheduleService) {
+  .controller('ScheduleCtrl', function($scope, $http, scheduleService, $interval, dateService) {
     console.log('stuff');
     var dp = new DayPilot.Calendar("dp");
+
+    $scope.dateTime = new Date().toString();
 
     // behavior and appearance
     dp.cssClassPrefix = "calendar_white";
@@ -30,6 +32,14 @@ angular.module('hotPieApp')
     //            text: "Event"
     //        });
     //        dp.events.add(e);
+
+    $interval(function() {
+      console.log('trying to get date');
+      dateService.getDate().then(function(data) {
+        console.log('got date');
+        $scope.dateTime = data
+      })
+    }, 1000);
 
 
 

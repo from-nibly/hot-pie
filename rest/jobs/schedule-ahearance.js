@@ -5,26 +5,33 @@ module.exports = function(context) {
   setInterval(function() {
     if (!context.mode || context.mode.toLowerCase() == "schedule") {
 
-      console.log('checking schedules');
-
-      if (!context.schedule) {
-        context.schedule = require('../schedules/default.json');
+      var now;
+      if (context.date) {
+        now = moment(context.date);
+      } else {
+        now = moment();
       }
 
-      var day = moment().format('dddd').toLowerCase();
+      var day = now.format('dddd').toLowerCase();
+
+      console.log('checking schedules for', day);
 
       var schedule = context.schedule[day];
 
       var found = false;
       for (var o in schedule.overrides) {
         var override = schedule.overrides[o];
-        var now = moment();
-        var start = moment(override.start, 'HH:mm');
-        var stop = moment(override.stop, 'HH:mm');
 
-        if (start.fromNow().indexOf('ago') != -1 && stop.fromNow().indexOf('in') != -1) {
+        console.log('looking for', now.format('YYYY:MM:DD:') + override.start);
+        start = moment(now.format('YYYY:MM:DD:') + override.start, 'YYYY:MM:DD:HH:mm');
+        var stop = moment(now.format('YYYY:MM:DD:') + override.stop, 'YYYY:MM:DD:HH:mm');
+
+        console.log('start', start.format(), now.format(), start.from(now));
+        console.log('stop', stop.from(now))
+
+        if (start.from(now).indexOf('ago') != -1 && stop.from(now).indexOf('in') != -1) {
           found = true;
-          console.log('we found the schedule we are on', override);
+          console.log('--------------we found the schedule we are on', override);
           context.temp.override = override.temp;
         }
       }

@@ -18,7 +18,7 @@ module.exports = function(server, context) {
 
   server.post('/mode/:value', function(req, resp, next) {
 
-    context.mode = resp.params.value;
+    context.mode = req.params.value;
 
     resp.status(200).jsonp({
       status: 'OK',
@@ -130,6 +130,31 @@ module.exports = function(server, context) {
 
     resp.status(200).jsonp(context.schedule);
 
+  });
+
+  server.post('/date/:value', function(req, resp, next) {
+    if (req.params.value && req.params.value != "null") {
+      context.date = new Date(req.params.value);
+    } else {
+      context.date = null;
+    }
+    resp.status(200).jsonp({
+      status: 'OK'
+    });
+  });
+
+  server.get('/date', function(req, resp, next) {
+    if (context.date) {
+      resp.status(200).jsonp({
+        status: 'OK',
+        value: context.date
+      });
+    } else {
+      resp.status(200).jsonp({
+        status: 'OK',
+        value: new Date()
+      });
+    }
   });
 
 };

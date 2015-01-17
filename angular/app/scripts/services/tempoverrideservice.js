@@ -15,7 +15,7 @@ angular.module('hotPieApp')
     this.getTemp = function() {
       $http({
         method: "GET",
-        url: "137.190.207.78:3000/temp/override/"
+        url: "localhost:3000/temp/override/"
       }).then(function(data) {
         console.log(data);
       }, function(err) {
@@ -30,7 +30,7 @@ angular.module('hotPieApp')
       update = $timeout(function() {
         $http({
           method: "POST",
-          url: "137.190.207.78:3000/temp/override/" + value
+          url: "localhost:3000/temp/override/" + value
         }).then(function(data) {
           console.log(data);
         }, function(err) {
