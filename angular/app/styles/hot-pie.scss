@@ -84,6 +84,9 @@
       top: 0;
       border-radius: 50%;
       margin: auto;
+      .iconic {
+        position: relative;
+      }
       .current-temp {
         position: absolute;
         font-size: 55px;
@@ -91,7 +94,6 @@
         top: 65px;
         left: 90px;
         .iconic {
-          position: relative;
           bottom: 5px;
         }
       }
@@ -102,7 +104,6 @@
         top: 330px;
         left: 90px;
         .iconic {
-          position: relative;
           bottom: 7px;
         }
       }
@@ -113,7 +114,6 @@
         top: 155px;
         left: 135px;
         .iconic {
-          position: relative;
           bottom: 26px;
           right: 15px;
         }

@@ -30,7 +30,7 @@ context.fake = true;
 context.mode = "schedule"
 fs.readFile('./schedules/default.json', function(err, data) {
   context.schedule = JSON.parse(data);
-})
+});
 
 jobRunner(context);
 

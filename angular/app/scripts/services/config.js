@@ -10,7 +10,7 @@
 angular.module('hotPieApp')
   .service('config', function () {
     // AngularJS will instantiate a singleton by calling "new" on this function
-    var host = '137.190.206.76';
+    var host = '';
     this.getHost = function() {
       return host || 'localhost';
     }
